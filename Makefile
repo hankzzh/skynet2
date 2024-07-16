@@ -5,7 +5,7 @@ CSERVICE_PATH ?= cservice
 
 SKYNET_BUILD_PATH ?= .
 
-CFLAGS = -g -O2 -Wall -I$(LUA_INC) $(MYCFLAGS)
+CFLAGS = -g -O2 -Wall -I$(LUA_INC) $(MYCFLAGS) -DCLIENT_USE_4_SIZE_BYTES
 # CFLAGS += -DUSE_PTHREAD_LOCK
 
 # lua
@@ -60,6 +60,7 @@ LUA_CLIB_SKYNET = \
   lua-socket.c \
   lua-mongo.c \
   lua-netpack.c \
+  lua-netpack-client.c \
   lua-memory.c \
   lua-multicast.c \
   lua-cluster.c \
